@@ -115,8 +115,8 @@ fn generate_from_data(data: Data) -> syn::Result<TokenStream> {
         }
 
         impl TryFrom<#f64> for #name {
-            type Error = Box<dyn std::error::Error + Send + Sync>;
-            fn try_from(value: #f64) -> std::result::Result<Self, Self::Error> {
+            type Error = Box<dyn core::error::Error + Send + Sync>;
+            fn try_from(value: #f64) -> core::result::Result<Self, Self::Error> {
                 if !(Self::MIN_FLOAT..=Self::MAX_FLOAT).contains(&value) {
                     Err(format!("{} is out of range for {}", value, Self::Q_NOTATION).into())
                 }

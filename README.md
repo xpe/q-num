@@ -29,7 +29,7 @@ Here is one example:
 
 ```rs
 define_q_num!(MyQ, Q6.2);
-let a = MyQ::from(13.75);
-let b = MyQ::from(-2.25);
+let a = MyQ::tryFrom(13.75).unwrap();
+let b = MyQ::tryFrom(-2.25).unwrap();
 let c = a + b; // 11.5
 ```
